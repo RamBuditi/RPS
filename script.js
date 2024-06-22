@@ -43,15 +43,11 @@ while(ans != "rock" || ans != "paper" || ans != "scissor")
 
 
 
-
+let humanScore = 0;
+let computerScore = 0;
 
 function playGame()
 {
-    let humanScore = 0;
-    let computerScore = 0;
-    console.log(getHumanChoice());
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
 
     function playRound(humanChoice, computerChoice)
 {
@@ -99,14 +95,17 @@ function playGame()
                                  console.log("You Lose! Rock beats Scissor");
                                  computerScore +=1;
                              }     
-
-
+                            }
+ 
 for(i = 0; i < 5; i ++)
     {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
        playRound(humanSelection, computerSelection);
     }
 
 }
 
 playGame();
-}
+console.log("You won " + humanScore +" rounds");
+console.log("The computer won " + computerScore +" rounds");
