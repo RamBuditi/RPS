@@ -123,7 +123,13 @@ function choiceScissorFunction()
                             {
                                  console.log("You Lose! Rock beats Scissor");
                                  computerScore +=1;
-                             }     
+                             }  
+                             
+                             
+                            liveHumanScore.textContent = "Human Score:" + humanScore;
+                            liveComputerScore.textContent = "Computer Score:"+ computerScore;
+                          
+                           
                             }
  
 // for(i = 0; i < 5; i ++)
@@ -132,7 +138,11 @@ function choiceScissorFunction()
 //     const computerSelection = getComputerChoice();
 //        playRound(humanSelection, computerSelection);
 //     }
-
+const results = document.getElementById("results");
+let liveHumanScore = document.createTextNode("Human Score:" + humanScore);
+let liveComputerScore = document.createTextNode("Computer Score:"+ computerScore);
+results.appendChild(liveHumanScore);
+results.appendChild(liveComputerScore);
 
 
 
