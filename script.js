@@ -18,26 +18,26 @@ function getComputerChoice()
 
 
 
-function getHumanChoice()
-{
-  let ans;
+// function getHumanChoice()
+// {
+//   let ans;
   
 
-while(ans != "rock" || ans != "paper" || ans != "scissor")
-    {
-     ans = prompt("rock, paper, or scissor?");
-     ans = ans.toLowerCase();
-     console.log(ans);
-    if(ans == "rock" || ans == "paper" || ans == "scissor")
-        {
-            return ans;
-        }
-    else
-    {
-        console.log("Invald input please try again ");
-    }
-}
-}
+// while(ans != "rock" || ans != "paper" || ans != "scissor")
+//     {
+//      ans = prompt("rock, paper, or scissor?");
+//      ans = ans.toLowerCase();
+//      console.log(ans);
+//     if(ans == "rock" || ans == "paper" || ans == "scissor")
+//         {
+//             return ans;
+//         }
+//     else
+//     {
+//         console.log("Invald input please try again ");
+//     }
+// }
+// }
 
 
 
@@ -46,8 +46,37 @@ while(ans != "rock" || ans != "paper" || ans != "scissor")
 let humanScore = 0;
 let computerScore = 0;
 
-function playGame()
+
+const choiceRock = document.getElementById("rock").addEventListener("click", choiceRockFunction);
+
+function choiceRockFunction()
 {
+    humanSelection= "rock";
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+    
+}
+
+
+const choicePaper = document.getElementById("paper").addEventListener("click", choicePaperFunction);
+
+function choicePaperFunction()
+{
+    humanSelection= "paper";
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+    
+}
+
+const choiceScissor = document.getElementById("scissor").addEventListener("click", choiceScissorFunction);
+
+function choiceScissorFunction()
+{
+    humanSelection= "scissor";
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+}
+
 
     function playRound(humanChoice, computerChoice)
 {
@@ -97,15 +126,15 @@ function playGame()
                              }     
                             }
  
-for(i = 0; i < 5; i ++)
-    {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-       playRound(humanSelection, computerSelection);
-    }
+// for(i = 0; i < 5; i ++)
+//     {
+//     const humanSelection = getHumanChoice();
+//     const computerSelection = getComputerChoice();
+//        playRound(humanSelection, computerSelection);
+//     }
 
-}
 
-playGame();
+
+
 console.log("You won " + humanScore +" rounds");
 console.log("The computer won " + computerScore +" rounds");
